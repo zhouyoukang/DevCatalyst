@@ -1,0 +1,48 @@
+{
+    // === DevCatalyst — settings.json template ===
+    // Merge into: %APPDATA%\Windsurf\User\settings.json
+    // Note: Merge, do not overwrite existing settings
+
+    // === Terminal (anti-hang, critical) ===
+    "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+    "terminal.integrated.shellIntegration.enabled": true,
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.persistentSessionScrollback": 1000,
+
+    // === Editor ===
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.inlineSuggest.enabled": true,
+    "editor.wordWrap": "on",
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.linkedEditing": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.accessibilitySupport": "off",
+
+    // === Files ===
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+
+    // === Search ===
+    "search.exclude": {
+        "**/build": true,
+        "**/.gradle": true,
+        "**/node_modules": true,
+        "**/*.apk": true
+    },
+
+    // === Git ===
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+
+    // === Workbench ===
+    "workbench.editor.enablePreview": false,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false
+}

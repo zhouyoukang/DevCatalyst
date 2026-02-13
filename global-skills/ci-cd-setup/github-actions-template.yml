@@ -1,0 +1,55 @@
+# GitHub Actions CI/CD Template
+# Usage: Copy to .github/workflows/, replace <PLACEHOLDER>
+
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: <SETUP_ACTION>  # actions/setup-node@v4 / setup-java@v4 / setup-python@v5
+        with:
+          <RUNTIME_VERSION>   # node-version: '20' / java-version: '21'
+      - name: Install dependencies
+        run: <INSTALL_CMD>     # npm ci / pip install -r requirements.txt
+      - name: Lint
+        run: <LINT_CMD>        # npm run lint / flake8 / ktlint
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: <SETUP_ACTION>
+        with:
+          <RUNTIME_VERSION>
+      - name: Install dependencies
+        run: <INSTALL_CMD>
+      - name: Test
+        run: <TEST_CMD>        # npm test / pytest / ./gradlew test
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup
+        uses: <SETUP_ACTION>
+        with:
+          <RUNTIME_VERSION>
+      - name: Build
+        run: <BUILD_CMD>       # npm run build / ./gradlew assembleRelease
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: <BUILD_PATH>   # dist/ / build/outputs/

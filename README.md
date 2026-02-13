@@ -1,132 +1,185 @@
 # DevCatalyst
 
-**一小段文字，释放 AI 编程助手的全部智能。**
+**A tiny config that catalyzes your AI coding assistant into a truly intelligent collaborator.**
 
-> A tiny config that catalyzes your AI coding assistant into a truly intelligent collaborator.
+> 一小段文字，释放 AI 编程助手的全部智能。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
-## 这是什么？
+## What is this?
 
-DevCatalyst 是一套**自律配置架构**，让 AI 编程助手（如 Windsurf Cascade）从"指令执行器"变成"智能协作者"。
+DevCatalyst is a **self-disciplined configuration architecture** that transforms AI coding assistants (like Windsurf Cascade) from "instruction executors" into "intelligent collaborators".
 
-- 📦 **极简**：核心规则不到 6000 字符，却能显著提升 AI 的代码质量、主动性和问题解决能力
-- 🧬 **自律**：内置规则预算制 + 变更协议 + 生命周期管理，**防止配置膨胀**
-- 🔄 **自进化**：AI 在日常工作中自动观察、记录和优化自身配置
-- 🛡️ **安全**：跨项目修改有保护机制，全局配置变更需确认
-- ⚡ **一键部署**：一条提示词完成全部安装
+- 📦 **Minimal** — Core rules under 6000 characters, yet dramatically improve AI code quality, proactivity, and problem-solving
+- 🧬 **Self-disciplined** — Built-in rule budget + change protocol + lifecycle management to **prevent config bloat**
+- 🔄 **Self-evolving** — AI automatically observes, records, and optimizes its own configuration during daily work
+- 🛡️ **Safe** — Cross-project modifications have protection mechanisms; global config changes require confirmation
+- ⚡ **One-click deploy** — A single prompt completes full installation
 
-## 解决什么问题？
+## The Problem: Rule Entropy
 
-### 规则熵增问题
-
-每个 AI 编程助手的用户都会遇到：
+Every AI coding assistant user encounters this:
 
 ```
-不断添加规则 → 短期有效 → 长期冗余矛盾 → AI 效率下降 → 再加规则修补 → 恶性循环
+Keep adding rules → Short-term effective → Long-term redundant/contradictory → AI efficiency drops → Add more rules to fix → Vicious cycle
 ```
 
-现有方案（如 ARM、aicodingrules.org）解决了规则的**分发**，但没有解决**进化过程中的自律**。
+Existing solutions (ARM, aicodingrules.org) solve rule **distribution**, but not **self-discipline during evolution**.
 
-DevCatalyst 的核心创新是**规则编译器模式**：
+DevCatalyst's core innovation is the **Rule Compiler Pattern**:
 
-| 机制 | 作用 |
-|------|------|
-| **预算制** | always-on 规则总量 ≤ 6000 字符，强制精简 |
-| **变更协议** | 用户说"加规则"时，AI 先路由→冲突检测→预算检查 |
-| **生命周期** | 新想法默认进 Memory 观察，验证 3+ 次才升级为规则 |
-| **规则编译** | `/evolve` 定期去重、压缩、降级未使用规则 |
+| Mechanism | Purpose |
+|-----------|--------|
+| **Budget System** | always-on rules total ≤ 6000 chars, forced conciseness |
+| **Change Protocol** | When user says "add a rule", AI first routes → conflict checks → budget checks |
+| **Lifecycle** | New ideas default to Memory for observation; validated 3+ times before becoming rules |
+| **Rule Compiler** | `/evolve` periodically deduplicates, compresses, downgrades unused rules |
 
-## 架构
+## Architecture
 
 ```
 ┌─────────────────────────────────────┐
-│  Layer 0: 内核 (≤500 chars)         │ ← 3 条元规则，永不修改
-│  预算制 | 变更协议 | AI不盲加规则    │
+│  Layer 0: Kernel (≤500 chars)       │ ← 3 meta-rules, immutable
+│  Budget | Change Protocol | No-blind-add │
 ├─────────────────────────────────────┤
-│  Layer 1: 框架 (≤3000 chars)        │ ← 决策框架 + 执行引擎
-│  PREDICT | ESCALATION | 安全约束    │
+│  Layer 1: Framework (≤3000 chars)   │ ← Decision framework + Execution engine
+│  PREDICT | ESCALATION | Safety      │
 ├─────────────────────────────────────┤
-│  Layer 2: 扩展 (≤2500 chars)        │ ← 项目特定 + 用户自定义
-│  语言规则 | 项目结构 | 自定义       │
+│  Layer 2: Extensions (≤2500 chars)  │ ← Project-specific + User-defined
+│  Language rules | Structure | Custom │
 └─────────────────────────────────────┘
 ```
 
-## 快速开始
+## Quick Start
 
-### 方式 1：一键部署（推荐）
+### Option 1: One-click Deploy (Recommended)
 
-在 Windsurf 中新建对话，粘贴：
+In Windsurf, start a new conversation and paste:
 
 ```
-请阅读 {DevCatalyst路径}/installer/INSTALLER.md 并按步骤执行完整安装。
+Please read {path-to-DevCatalyst}/installer/INSTALLER.md and execute the full installation.
 ```
 
-### 方式 2：手动安装
+### Option 2: Manual Install
 
-1. **全局规则**：将 `core/global-rules.md` 内容复制到 Windsurf Settings → AI Rules
-2. **项目规则**：在项目中创建 `.windsurf/rules/` 目录，放入 `soul.md` 和 `execution-engine.md`
-3. **验证**：运行 `/health-check` 确认安装完整
+1. **Global Rules**: Copy `core/global-rules.md` content to Windsurf Settings → AI Rules
+2. **Project Rules**: Create `.windsurf/rules/` in your project, add `soul.md` and `execution-engine.md`
+3. **Verify**: Run `/health-check` to confirm installation
 
-## 核心理念
+## What's Included
 
-### PREDICT 决策框架
+```
+DevCatalyst/
+├── core/                       # Core rules (Layer 0+1)
+│   ├── kernel.md               # 3 immutable meta-rules
+│   ├── global-rules.md         # Global behavior rules
+│   ├── soul.md                 # AI thinking kernel
+│   └── execution-engine.md     # Execution engine
+├── project-templates/          # Project templates (Layer 2)
+│   ├── PROJECT_SETUP.md        # Auto-init guide for AI
+│   ├── AGENTS.md.template      # Directory-level instructions
+│   ├── hooks.json              # Safe hooks template
+│   ├── skills/                 # Project skill templates
+│   └── workflows/              # Project workflow templates
+├── global-skills/              # 23 global skills
+│   ├── code-review/            # Code review
+│   ├── error-diagnosis/        # Error diagnosis
+│   ├── refactor-code/          # Code refactoring
+│   ├── ... and 20 more
+├── workflows/                  # 9 standard workflows
+│   ├── dev.md                  # Full-stack dev pipeline
+│   ├── evolve.md               # Self-evolution
+│   ├── health-check.md         # Health check
+│   └── ... and 6 more
+├── installer/                  # Installation system
+│   ├── INSTALLER.md            # Auto-install instructions
+│   └── INSTALL_PROMPT.md       # Starter prompt
+├── hooks/examples/             # Python hook examples
+├── settings/                   # IDE config templates
+│   ├── settings.json.template
+│   ├── MCP_GUIDE.md            # MCP recommendation guide
+│   └── WINDSURF_UI_SETUP.md
+├── scripts/                    # Automation scripts
+│   └── verify-installation.ps1
+└── docs/                       # Documentation
+    ├── ARCHITECTURE.md          # Two-layer architecture
+    └── ARCHITECTURE_v5.md       # v5.0 self-discipline design
+```
 
-- **P**redict — 预测用户下一步需要什么
-- **R**esearch — 先搜索再动手
-- **E**xecute — 一次性闭环完成
-- **D**ocument — 重要发现写入 Memory
-- **I**terate — 反思改进
-- **C**omplete — 主动补全遗漏
-- **T**ransfer — 经验迁移
+## Core Concepts
 
-### ESCALATION 问题升级
+### PREDICT Decision Framework
 
-1. **L1** 自主解决（仅限简单改动）
-2. **L2** 搜索研究（默认起点）
-3. **L3** 人机协作（请用户观察 AI 看不到的）
-4. **L4** 用户指挥（承认无效，请用户给方向）
+- **P**redict — What will the user need next?
+- **R**esearch — Is there a better approach? Search first.
+- **E**xecute — Complete in one shot, no half-finished work
+- **D**ocument — Write findings to Memory, not "in your head"
+- **I**terate — Reflect: what could be better?
+- **C**omplete — Proactively fill gaps the user didn't mention
+- **T**ransfer — Can this experience transfer to other scenarios?
 
-### 自律进化
+### ESCALATION Problem-Solving
 
-- **双输出原则**：每次交互产生任务结果 + 系统进化
-- **规则路由**：80% 的"规则请求"应路由到 Memory 或 Skill，不是规则文件
-- **进化质量门槛**：重复性 + 通用性 + 可操作性 + 不冲突 → 4Yes 才固化
+1. **L1** Self-solve (simple changes only)
+2. **L2** Research (default starting point) — search + docs + community
+3. **L3** Collaborate — ask user to observe what AI can't see
+4. **L4** User-directed — admit failure, ask for direction
 
-## 工作流
+### Self-Disciplined Evolution
 
-| 命令 | 功能 |
-|------|------|
-| `/dev` | 全流程开发：需求→研究→设计→实现→构建→部署→文档 |
-| `/evolve` | 系统进化：审查+编译+优化规则/Skills/Memory |
-| `/health-check` | 健康检查：检测配置完整性+预算使用率 |
-| `/review` | 代码审查 |
-| `/debug-escalation` | 逐层升级调试 |
+- **Dual Output**: Every interaction produces task result + system evolution
+- **Rule Routing**: 80% of "rule requests" should go to Memory or Skills, not rule files
+- **Quality Gate**: Repeatability + Generality + Actionability + No-conflict → all 4 Yes to solidify
 
-## 与其他方案的对比
+## Workflows
 
-| 特性 | DevCatalyst | ARM | .cursorrules |
-|------|-------------|-----|-------------|
-| 规则分发 | ✅ 一键部署 | ✅ 包管理 | ❌ 手动复制 |
-| 防膨胀 | ✅ 预算制+编译器 | ❌ | ❌ |
-| 自进化 | ✅ 被动+主动 | ❌ | ❌ |
-| 变更协议 | ✅ 路由+冲突+预算 | ❌ | ❌ |
-| 生命周期 | ✅ proposed→validated→deprecated | ❌ | ❌ |
+| Command | Function |
+|---------|----------|
+| `/dev` | Full-stack dev: requirements → research → design → implement → build → deploy → docs |
+| `/evolve` | System evolution: audit + compile + optimize rules/Skills/Memory |
+| `/health-check` | Health check: detect config completeness + budget usage |
+| `/review` | Code review |
+| `/debug-escalation` | Layered debug escalation |
+| `/refactor` | Code refactoring |
+| `/optimize` | Performance optimization |
+| `/test` | Test writing |
+| `/doc` | Documentation generation |
 
-## 适配状态
+## Comparison
 
-- ✅ **Windsurf (Cascade)** — 完整支持
-- ⏳ **Cursor** — 规划中
-- ⏳ **GitHub Copilot** — 规划中
-- ⏳ **Claude Code** — 规划中
+| Feature | DevCatalyst | ARM | .cursorrules |
+|---------|-------------|-----|-------------|
+| Distribution | ✅ One-click | ✅ Package manager | ❌ Manual copy |
+| Anti-bloat | ✅ Budget + Compiler | ❌ | ❌ |
+| Self-evolution | ✅ Passive + Active | ❌ | ❌ |
+| Change Protocol | ✅ Route + Conflict + Budget | ❌ | ❌ |
+| Lifecycle | ✅ proposed→validated→deprecated | ❌ | ❌ |
+| Cross-IDE | ⏳ Windsurf (expanding) | ✅ Multi-IDE | ❌ Cursor only |
 
-## 版本历史
+## Compatibility
 
-- **v5.0** — 自律架构：预算制 + 变更协议 + 规则编译器 + 生命周期管理
-- v4.0 — 规则精简 75% + Hooks 策略修正 + Context Engineering
-- v3.0 — 活体智能架构 + 两层分离 + 用户教练
+- ✅ **Windsurf (Cascade)** — Full support
+- ⏳ **Cursor** — Planned
+- ⏳ **GitHub Copilot** — Planned
+- ⏳ **Claude Code** — Planned
+
+## Version History
+
+- **v5.0** — Self-discipline architecture: Budget + Change Protocol + Rule Compiler + Lifecycle
+- v4.0 — Rules reduced 75% + Hooks policy fix + MCP guide + Context Engineering
+- v3.0 — Living Intelligence Architecture + Two-layer separation
+- v2.0 — Incident-driven upgrade
+- v1.0 — Initial version
+
+## Contributing
+
+Contributions welcome! Especially:
+- New IDE adapters (Cursor / Copilot / Claude Code)
+- New global Skills
+- New workflow templates
+- Bug reports and improvement suggestions
 
 ## License
 

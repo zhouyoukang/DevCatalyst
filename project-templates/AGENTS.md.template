@@ -1,0 +1,26 @@
+# [Project Name]
+
+[One-line description of what the project does]
+
+## Tech Stack
+- **Language**: [e.g., TypeScript, Python, Kotlin]
+- **Framework**: [e.g., React, FastAPI, Ktor]
+- **Database**: [e.g., PostgreSQL, SQLite]
+- **Build**: [e.g., npm, Gradle, pip]
+
+## Core Principles
+- Check related modules before modifying any file
+- [Project-specific principle 1]
+- [Project-specific principle 2]
+
+## Project Structure
+```
+project-root/
+├── src/           # Source code
+├── tests/         # Tests
+├── docs/          # Documentation
+└── ...
+```
+
+## Documentation First
+Check project docs before modifying, confirm no design constraints.

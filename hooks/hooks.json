@@ -1,1 +1,74 @@
-{"hooks": {}}
+{
+    "hooks": {
+        "pre_read_code": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "post_read_code": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "pre_write_code": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "post_write_code": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "pre_run_command": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "post_run_command": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "pre_mcp_tool_use": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "post_mcp_tool_use": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ],
+        "pre_user_prompt": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py"
+            },
+            {
+                "command": "python __INSTALL_DIR__/observatory/conversation_capture.py"
+            }
+        ],
+        "post_cascade_response": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py"
+            },
+            {
+                "command": "python __INSTALL_DIR__/observatory/conversation_capture.py"
+            }
+        ],
+        "post_setup_worktree": [
+            {
+                "command": "python __INSTALL_DIR__/observatory/hook_logger.py",
+                "show_output": false
+            }
+        ]
+    }
+}

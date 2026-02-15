@@ -87,6 +87,9 @@ if (Test-Path $globalHooksPath) {
 
 Test-Item $globalRulesPath "Global rules (global_rules.md)"
 
+$safeWritePath = Join-Path $env:USERPROFILE ".codeium\windsurf\_safe_write.py"
+Test-Item $safeWritePath "Safe write tool (_safe_write.py)" -Required $false
+
 $settingsPath = Join-Path $env:APPDATA "Windsurf\User\settings.json"
 if (Test-Path $settingsPath) {
     Test-Content $settingsPath "Windows PowerShell" "Terminal profile set to Windows PowerShell"

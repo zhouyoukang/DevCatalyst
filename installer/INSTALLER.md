@@ -55,7 +55,18 @@ File: %USERPROFILE%\.codeium\windsurf\memories\global_rules.md
 - Character limit: 12000/file
 - Takes effect in new conversations without IDE restart
 
-## Step 5: Windsurf UI Settings (Manual)
+## Step 5: Deploy Safe Write Tool
+
+Copy `scripts/_safe_write.py` to global location:
+
+```
+Target: %USERPROFILE%\.codeium\windsurf\_safe_write.py
+```
+
+> This tool routes file writes through the terminal channel, bypassing IDE edit tool hangs (~25% failure rate).
+> Usage: `python _safe_write.py batch <instruction.json>`
+
+## Step 6: Windsurf UI Settings (Manual)
 
 See `settings/WINDSURF_UI_SETUP.md` for details:
 1. Cascade Gitignore access → Enable
@@ -63,7 +74,7 @@ See `settings/WINDSURF_UI_SETUP.md` for details:
 3. Memory → Confirm enabled
 4. Inline Completion → Confirm enabled
 
-## Step 6: Project Layer (Layer 2)
+## Step 7: Project Layer (Layer 2)
 
 Read `project-templates/PROJECT_SETUP.md` and auto-configure:
 1. Analyze project type
@@ -72,7 +83,7 @@ Read `project-templates/PROJECT_SETUP.md` and auto-configure:
 4. Create AGENTS.md
 5. Create hooks.json (`{"hooks": {}}`)
 
-## Step 7: Verify
+## Step 8: Verify
 
 1. Check global Skills count (expected: 23)
 2. Check settings.json has correct terminal profile

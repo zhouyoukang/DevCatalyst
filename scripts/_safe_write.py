@@ -40,7 +40,8 @@ def main():
     mode = sys.argv[1]
 
     if mode == "batch":
-        instr = json.loads(open(sys.argv[2], "r", encoding="utf-8").read())
+        instr_path = sys.argv[2]
+        instr = json.loads(open(instr_path, "r", encoding="utf-8").read())
         target = instr["file"]
         content = open(target, "r", encoding="utf-8").read()
         applied = 0
@@ -52,6 +53,10 @@ def main():
             applied += 1
         open(target, "w", encoding="utf-8").write(content)
         print(f"OK: {applied}/{len(instr['edits'])} edits applied to {target}")
+        if instr.get("cleanup", True):
+            import os
+            os.remove(instr_path)
+            print(f"Cleaned: {instr_path}")
 
     elif mode == "replace":
         old_str = open(sys.argv[3], "r", encoding="utf-8").read()

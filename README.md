@@ -103,6 +103,7 @@ DevCatalyst/
 │   ├── MCP_GUIDE.md            # MCP recommendation guide
 │   └── WINDSURF_UI_SETUP.md
 ├── scripts/                    # Automation scripts
+│   ├── _safe_write.py           # Reliable file editing via terminal channel (bypasses IDE edit tool hang)
 │   └── verify-installation.ps1
 └── docs/                       # Documentation
     ├── ARCHITECTURE.md          # Two-layer architecture
